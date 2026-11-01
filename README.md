@@ -8,25 +8,9 @@
   <img src="https://img.shields.io/badge/Based_in-Cairo,_Egypt-1b1338?style=for-the-badge" alt="Based in Cairo, Egypt">
 </p>
 
-```swift
-// whoami.swift
-struct MohamedHaggag: SeniorIOSEngineer {
-    let role       = "Senior iOS Developer @ Beetleware, leading 4 iOS engineers"
-    let experience = "8+ years shipping apps to Saudi Arabia, Iraq and Egypt"
-
-    let languages    = ["Swift 6", "SwiftUI", "UIKit", "Combine", "async/await"]
-    let architecture = ["Clean Architecture", "MVVM", "VIP", "VIPER", "SPM modules"]
-    let superpowers  = ["E2EE with CryptoKit", "Apple Pay · Mada · HyperPay", "SignalR · WebRTC · CallKit"]
-    let delivery     = ["Fastlane", "Bitrise", "GitHub Actions", "Xcode Cloud", "XCTest", "XCUITest"]
-
-    var currentlyBuilding: String { "A super app: encrypted chat, calls, a wallet and gov e-services" }
-    var growingToward: String { "Product-focused technical leadership" }
-
-    func collaborate(on idea: Idea) async throws -> App {
-        try await idea.validate().design().build().ship()
-    }
-}
-```
+<p align="center">
+  <img src="assets/whoami.svg" width="100%" alt="whoami.swift in Xcode's Default Dark theme: a Swift struct describing Mohamed Haggag, his stack, architecture, superpowers and delivery tools">
+</p>
 
 ### 📱 Shipped to the App Store
 

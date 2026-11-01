@@ -5,84 +5,72 @@
   .sans { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif; }
   .mono { font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
 </style>
-<defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#1b1338"/>
-  </linearGradient>
-  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-    <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
-  </pattern>
-</defs>
-<rect width="960" height="400" rx="22" fill="url(#bg)"/>
-<rect width="960" height="400" rx="22" fill="url(#grid)"/>
-<rect x="0.5" y="0.5" width="959" height="399" rx="21.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
-<path d="M0 22A22 22 0 0 1 22 0H938A22 22 0 0 1 960 22V44H0Z" fill="#161b26"/>
-<circle cx="26" cy="22" r="6" fill="#ff5f57"/><circle cx="46" cy="22" r="6" fill="#febc2e"/><circle cx="66" cy="22" r="6" fill="#28c840"/>
-<text x="480" y="27" text-anchor="middle" class="sans" font-size="12.5" fill="#8b93a7">haggag — career.git</text>
-<text x="32" y="78" class="mono" font-size="13.5" xml:space="preserve"><tspan fill="#3fb950">$ </tspan><tspan fill="#e6edf3">git log </tspan><tspan fill="#8b93a7">--graph --oneline --decorate</tspan></text>
+<rect width="960" height="400" rx="16" fill="#1F1F24"/><rect x="0.5" y="0.5" width="959" height="399" rx="15.5" fill="none" stroke="#3A3A40"/>
+<path d="M0 44V16a16 16 0 0 1 16-16H944a16 16 0 0 1 16 16V44Z" fill="#2B2B30"/><path d="M0 44H960" stroke="#000" stroke-opacity="0.5"/><circle cx="22" cy="22.0" r="6" fill="#ff5f57"/><circle cx="42" cy="22.0" r="6" fill="#febc2e"/><circle cx="62" cy="22.0" r="6" fill="#28c840"/><text x="480.0" y="26.5" text-anchor="middle" class="sans" font-size="12.5" fill="#6C7986">haggag — career.git</text>
+<text x="32" y="78" class="mono" font-size="13.5" xml:space="preserve"><tspan fill="#6C7986">$ </tspan><tspan fill="#FC5FA3" font-weight="700">git log </tspan><tspan fill="#41A1C0">--graph --oneline --decorate</tspan></text>
 <clipPath id="grow"><rect x="30" y="358" width="70" height="0">
   <animate attributeName="y" from="358" to="106" begin="0.3s" dur="2.2199999999999998s" fill="freeze"/>
   <animate attributeName="height" from="0" to="252" begin="0.3s" dur="2.2199999999999998s" fill="freeze"/>
 </rect></clipPath>
 <g clip-path="url(#grow)" fill="none" stroke-width="3" stroke-linecap="round">
-  <path d="M48 346V118" stroke="#F05138"/>
-  <path d="M48 270C48 248 78 248 78 232L78 194C78 178 48 178 48 156" stroke="#bc8cff"/>
+  <path d="M48 346V118" stroke="#FD8F3F"/>
+  <path d="M48 270C48 248 78 248 78 232L78 194C78 178 48 178 48 156" stroke="#D0A8FF"/>
 </g>
 <g opacity="0">
   <animate attributeName="opacity" from="0" to="1" begin="2.2199999999999998s" dur="0.35s" fill="freeze"/>
   <animateTransform attributeName="transform" from="-10 0" to="0 0" begin="2.2199999999999998s" dur="0.35s" fill="freeze" type="translate"/>
-  <circle cx="48" cy="118" r="7" fill="none" stroke="#F05138" stroke-width="2"><animate attributeName="r" values="7;16" dur="2s" begin="2.62s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.8;0" dur="2s" begin="2.62s" repeatCount="indefinite"/></circle><circle cx="48" cy="118" r="6.5" fill="#F05138" stroke="#F05138" stroke-width="3"/>
-  <text x="112" y="122.5" class="mono" font-size="13" fill="#e3b341">a1f9e3c</text>
-  <text x="180" y="122.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#e3b341">(</tspan><tspan fill="#39c5cf">HEAD -&gt; </tspan><tspan fill="#3fb950">main</tspan><tspan fill="#e3b341">) </tspan><tspan fill="#e6edf3">Beetleware · Senior iOS Developer · leading 4 iOS engineers</tspan></text>
-  <text x="928" y="122.5" text-anchor="end" class="sans" font-size="12.5" fill="#8b93a7">Mar 2024 → now</text>
+  <circle cx="48" cy="118" r="7" fill="none" stroke="#FD8F3F" stroke-width="2"><animate attributeName="r" values="7;16" dur="2s" begin="2.62s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values="0.8;0" dur="2s" begin="2.62s" repeatCount="indefinite"/></circle><circle cx="48" cy="118" r="6.5" fill="#FD8F3F" stroke="#FD8F3F" stroke-width="3"/>
+  <text x="112" y="122.5" class="mono" font-size="13" fill="#D0BF69">a1f9e3c</text>
+  <text x="180" y="122.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#6C7986">(</tspan><tspan fill="#5DD8FF">HEAD -&gt; </tspan><tspan fill="#32D74B">main</tspan><tspan fill="#6C7986">) </tspan><tspan fill="#DFDFE0">Beetleware · Senior iOS Developer · leading 4 iOS engineers</tspan></text>
+  <text x="928" y="122.5" text-anchor="end" class="sans" font-size="12.5" fill="#6C7986">Mar 2024 → now</text>
 </g>
 <g opacity="0">
   <animate attributeName="opacity" from="0" to="1" begin="1.9000000000000001s" dur="0.35s" fill="freeze"/>
   <animateTransform attributeName="transform" from="-10 0" to="0 0" begin="1.9000000000000001s" dur="0.35s" fill="freeze" type="translate"/>
-  <circle cx="48" cy="156" r="6.5" fill="#0f1428" stroke="#F05138" stroke-width="3"/>
-  <text x="112" y="160.5" class="mono" font-size="13" fill="#e3b341">7c2d0b8</text>
-  <text x="180" y="160.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#e6edf3">ElMasadr · Senior iOS Developer · shipped Istend (4.6★)</tspan></text>
-  <text x="928" y="160.5" text-anchor="end" class="sans" font-size="12.5" fill="#8b93a7">Sep 2023 → Apr 2024</text>
+  <circle cx="48" cy="156" r="6.5" fill="#1F1F24" stroke="#FD8F3F" stroke-width="3"/>
+  <text x="112" y="160.5" class="mono" font-size="13" fill="#D0BF69">7c2d0b8</text>
+  <text x="180" y="160.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#DFDFE0">ElMasadr · Senior iOS Developer · shipped Istend (4.6★)</tspan></text>
+  <text x="928" y="160.5" text-anchor="end" class="sans" font-size="12.5" fill="#6C7986">Sep 2023 → Apr 2024</text>
 </g>
 <g opacity="0">
   <animate attributeName="opacity" from="0" to="1" begin="1.58s" dur="0.35s" fill="freeze"/>
   <animateTransform attributeName="transform" from="-10 0" to="0 0" begin="1.58s" dur="0.35s" fill="freeze" type="translate"/>
-  <circle cx="78" cy="194" r="6.5" fill="#0f1428" stroke="#bc8cff" stroke-width="3"/>
-  <text x="112" y="198.5" class="mono" font-size="13" fill="#e3b341">e41aa90</text>
-  <text x="180" y="198.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#e3b341">(</tspan><tspan fill="#e3b341">tag: promoted</tspan><tspan fill="#e3b341">) </tspan><tspan fill="#e6edf3">Fintech-SA · Senior iOS Developer · led the iOS team</tspan></text>
-  <text x="928" y="198.5" text-anchor="end" class="sans" font-size="12.5" fill="#8b93a7">Jan 2023 → Sep 2023</text>
+  <circle cx="78" cy="194" r="6.5" fill="#1F1F24" stroke="#D0A8FF" stroke-width="3"/>
+  <text x="112" y="198.5" class="mono" font-size="13" fill="#D0BF69">e41aa90</text>
+  <text x="180" y="198.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#6C7986">(</tspan><tspan fill="#FC5FA3">tag: promoted</tspan><tspan fill="#6C7986">) </tspan><tspan fill="#DFDFE0">Fintech-SA · Senior iOS Developer · led the iOS team</tspan></text>
+  <text x="928" y="198.5" text-anchor="end" class="sans" font-size="12.5" fill="#6C7986">Jan 2023 → Sep 2023</text>
 </g>
 <g opacity="0">
   <animate attributeName="opacity" from="0" to="1" begin="1.26s" dur="0.35s" fill="freeze"/>
   <animateTransform attributeName="transform" from="-10 0" to="0 0" begin="1.26s" dur="0.35s" fill="freeze" type="translate"/>
-  <circle cx="78" cy="232" r="6.5" fill="#0f1428" stroke="#bc8cff" stroke-width="3"/>
-  <text x="112" y="236.5" class="mono" font-size="13" fill="#e3b341">3b7f21d</text>
-  <text x="180" y="236.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#e6edf3">Fintech-SA (Rasid Payments) · iOS Developer · payments suite</tspan></text>
-  <text x="928" y="236.5" text-anchor="end" class="sans" font-size="12.5" fill="#8b93a7">Jan 2022 → Dec 2022</text>
+  <circle cx="78" cy="232" r="6.5" fill="#1F1F24" stroke="#D0A8FF" stroke-width="3"/>
+  <text x="112" y="236.5" class="mono" font-size="13" fill="#D0BF69">3b7f21d</text>
+  <text x="180" y="236.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#DFDFE0">Fintech-SA (Rasid Payments) · iOS Developer · payments suite</tspan></text>
+  <text x="928" y="236.5" text-anchor="end" class="sans" font-size="12.5" fill="#6C7986">Jan 2022 → Dec 2022</text>
 </g>
 <g opacity="0">
   <animate attributeName="opacity" from="0" to="1" begin="0.94s" dur="0.35s" fill="freeze"/>
   <animateTransform attributeName="transform" from="-10 0" to="0 0" begin="0.94s" dur="0.35s" fill="freeze" type="translate"/>
-  <circle cx="48" cy="270" r="6.5" fill="#0f1428" stroke="#F05138" stroke-width="3"/>
-  <text x="112" y="274.5" class="mono" font-size="13" fill="#e3b341">9d02c4e</text>
-  <text x="180" y="274.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#e6edf3">ICOSOL · iOS Developer · apps shipped to the App Store</tspan></text>
-  <text x="928" y="274.5" text-anchor="end" class="sans" font-size="12.5" fill="#8b93a7">Sep 2020 → Dec 2021</text>
+  <circle cx="48" cy="270" r="6.5" fill="#1F1F24" stroke="#FD8F3F" stroke-width="3"/>
+  <text x="112" y="274.5" class="mono" font-size="13" fill="#D0BF69">9d02c4e</text>
+  <text x="180" y="274.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#DFDFE0">ICOSOL · iOS Developer · apps shipped to the App Store</tspan></text>
+  <text x="928" y="274.5" text-anchor="end" class="sans" font-size="12.5" fill="#6C7986">Sep 2020 → Dec 2021</text>
 </g>
 <g opacity="0">
   <animate attributeName="opacity" from="0" to="1" begin="0.62s" dur="0.35s" fill="freeze"/>
   <animateTransform attributeName="transform" from="-10 0" to="0 0" begin="0.62s" dur="0.35s" fill="freeze" type="translate"/>
-  <circle cx="48" cy="308" r="6.5" fill="#0f1428" stroke="#F05138" stroke-width="3"/>
-  <text x="112" y="312.5" class="mono" font-size="13" fill="#e3b341">5e8a1f0</text>
-  <text x="180" y="312.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#e6edf3">Freelance · iOS Developer · client apps incl. a pharma CRM</tspan></text>
-  <text x="928" y="312.5" text-anchor="end" class="sans" font-size="12.5" fill="#8b93a7">Jan 2018 → Aug 2020</text>
+  <circle cx="48" cy="308" r="6.5" fill="#1F1F24" stroke="#FD8F3F" stroke-width="3"/>
+  <text x="112" y="312.5" class="mono" font-size="13" fill="#D0BF69">5e8a1f0</text>
+  <text x="180" y="312.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#DFDFE0">Freelance · iOS Developer · client apps incl. a pharma CRM</tspan></text>
+  <text x="928" y="312.5" text-anchor="end" class="sans" font-size="12.5" fill="#6C7986">Jan 2018 → Aug 2020</text>
 </g>
 <g opacity="0">
   <animate attributeName="opacity" from="0" to="1" begin="0.3s" dur="0.35s" fill="freeze"/>
   <animateTransform attributeName="transform" from="-10 0" to="0 0" begin="0.3s" dur="0.35s" fill="freeze" type="translate"/>
-  <circle cx="48" cy="346" r="6.5" fill="#0f1428" stroke="#F05138" stroke-width="3"/>
-  <text x="112" y="350.5" class="mono" font-size="13" fill="#e3b341">c0ffee1</text>
-  <text x="180" y="350.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#e6edf3">Initial commit · B.Sc. Computer Science, Mansoura University</tspan></text>
-  <text x="928" y="350.5" text-anchor="end" class="sans" font-size="12.5" fill="#8b93a7">2015 → 2019</text>
+  <circle cx="48" cy="346" r="6.5" fill="#1F1F24" stroke="#FD8F3F" stroke-width="3"/>
+  <text x="112" y="350.5" class="mono" font-size="13" fill="#D0BF69">c0ffee1</text>
+  <text x="180" y="350.5" class="mono" font-size="13" xml:space="preserve"><tspan fill="#DFDFE0">Initial commit · B.Sc. Computer Science, Mansoura University</tspan></text>
+  <text x="928" y="350.5" text-anchor="end" class="sans" font-size="12.5" fill="#6C7986">2015 → 2019</text>
 </g>
-<text x="32" y="386" class="mono" font-size="13" fill="#8b93a7" opacity="0">(END)<animate attributeName="opacity" from="0" to="1" begin="2.6199999999999997s" dur="0.3s" fill="freeze"/></text>
+<text x="32" y="386" class="mono" font-size="13" fill="#6C7986" opacity="0">(END)<animate attributeName="opacity" from="0" to="1" begin="2.6199999999999997s" dur="0.3s" fill="freeze"/></text>
 </svg>

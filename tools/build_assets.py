@@ -3,6 +3,7 @@
 
 Run: python3 tools/build_assets.py
 Every animation is SMIL inside the SVG, so it plays in GitHub's <img> rendering without JavaScript.
+Colors follow Xcode's "Default (Dark)" editor theme.
 """
 from pathlib import Path
 from xml.sax.saxutils import escape as esc
@@ -11,8 +12,24 @@ OUT = Path(__file__).resolve().parent.parent / "assets"
 
 SANS = "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif"
 MONO = "'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace"
-ORANGE, GREEN, BLUE, PURPLE, YELLOW, CYAN = "#F05138", "#3fb950", "#58a6ff", "#bc8cff", "#e3b341", "#39c5cf"
-TEXT, BRIGHT, MUTED = "#c9d1d9", "#e6edf3", "#8b93a7"
+
+# Xcode "Default (Dark)"
+EDITOR, WINDOW, CHROME, BORDER = "#1F1F24", "#161619", "#2B2B30", "#3A3A40"
+CURRENT_LINE, LINE_NO = "#23252B", "#747478"
+PLAIN = "#DFDFE0"
+KEYWORD = "#FC5FA3"
+COMMENT = "#6C7986"
+STRING = "#FC6A5D"
+NUMBER = "#D0BF69"
+TYPE_DECL = "#5DD8FF"
+OTHER_DECL = "#41A1C0"
+PROJECT_TYPE = "#9EF1DD"
+PROJECT_FUNC = "#67B7A4"
+OTHER_TYPE = "#D0A8FF"
+PREPROC = "#FD8F3F"
+URL = "#5482FF"
+SUCCESS = "#32D74B"
+SWIFT = "#F05138"
 
 STYLE = f"""<style>
   .sans {{ font-family: {SANS}; }}
@@ -40,18 +57,20 @@ def svg(w, h, title, desc, body):
             f'<desc id="d">{esc(desc)}</desc>\n{STYLE}\n{body}\n</svg>\n')
 
 
-def card_bg(w, h, gid="bg"):
-    return f"""<defs>
-  <linearGradient id="{gid}" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#1b1338"/>
-  </linearGradient>
-  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-    <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
-  </pattern>
-</defs>
-<rect width="{w}" height="{h}" rx="22" fill="url(#{gid})"/>
-<rect width="{w}" height="{h}" rx="22" fill="url(#grid)"/>
-<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="21.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>"""
+def card_bg(w, h, fill=EDITOR):
+    return (f'<rect width="{w}" height="{h}" rx="16" fill="{fill}"/>'
+            f'<rect x="0.5" y="0.5" width="{w - 1}" height="{h - 1}" rx="15.5" fill="none" stroke="{BORDER}"/>')
+
+
+def title_bar(x, y, w, title, r=16, h=40):
+    """Xcode window chrome: traffic lights and a centered title."""
+    return (f'<path d="M{x} {y + h}V{y + r}a{r} {r} 0 0 1 {r}-{r}H{x + w - r}a{r} {r} 0 0 1 {r} {r}V{y + h}Z" fill="{CHROME}"/>'
+            f'<path d="M{x} {y + h}H{x + w}" stroke="#000" stroke-opacity="0.5"/>'
+            f'<circle cx="{x + 22}" cy="{y + h / 2}" r="6" fill="#ff5f57"/>'
+            f'<circle cx="{x + 42}" cy="{y + h / 2}" r="6" fill="#febc2e"/>'
+            f'<circle cx="{x + 62}" cy="{y + h / 2}" r="6" fill="#28c840"/>'
+            + (f'<text x="{x + w / 2}" y="{y + h / 2 + 4.5}" text-anchor="middle" class="sans" font-size="12.5" '
+               f'fill="{COMMENT}">{title}</text>' if title else ""))
 
 
 def tspans(parts):
@@ -67,17 +86,17 @@ def tspans(parts):
 
 def hero():
     W, H, D = 960, 460, 16
-    step = lambda verb, rest: [("▸ ", ORANGE), (f"{verb:<10}", PURPLE), (rest, TEXT)]
+    step = lambda verb, rest: [("▸ ", PREPROC), (f"{verb:<10}", KEYWORD, "700"), (rest, PLAIN)]
     lines = [
-        [("$ ", GREEN), ("xcodebuild ", BRIGHT), ("-scheme ", MUTED), ('"Mohamed Haggag" ', "#ffa657"),
-         ("-configuration ", MUTED), ("Senior", "#ffa657")],
+        [("$ ", COMMENT), ("xcodebuild ", KEYWORD, "700"), ("-scheme ", OTHER_DECL), ('"Mohamed Haggag" ', STRING),
+         ("-configuration ", OTHER_DECL), ("Senior", PROJECT_TYPE)],
         step("Compiling", "Swift 6 · SwiftUI · UIKit · Combine · async/await"),
         step("Linking", "Clean Architecture · MVVM · VIP · VIPER · SPM"),
         step("Securing", "E2EE (CryptoKit) · Keychain · SSL pinning"),
         step("Wiring", "Apple Pay · Mada · Nafath · SignalR · WebRTC"),
         step("Testing", "XCTest · XCUITest · 8+ years in production"),
         step("Shipping", "Fastlane → App Store · KSA · Iraq · Egypt"),
-        [("** BUILD SUCCEEDED ** ", GREEN, "700"), ("Senior iOS Developer, leading 4 engineers ", BRIGHT)],
+        [("** BUILD SUCCEEDED ** ", SUCCESS, "700"), ("Senior iOS Developer, leading 4 engineers ", PLAIN)],
     ]
     done = 0.50          # build finishes here (fraction of the loop)
     fade = (0.93, 0.97)  # everything resets here
@@ -90,7 +109,7 @@ def hero():
                      f'{anim("width", [(0, 0), (s, 0), (s + 0.05, 580), (1, 580)], D)}</rect></clipPath>')
         cursor = ""
         if i == len(lines) - 1:
-            cursor = (f'<tspan fill="{BRIGHT}">▋<animate attributeName="fill-opacity" values="1;0;1" '
+            cursor = (f'<tspan fill="{PLAIN}">▋<animate attributeName="fill-opacity" values="1;0;1" '
                       f'dur="1s" repeatCount="indefinite"/></tspan>')
         texts.append(f'<text x="44" y="{y}" class="mono" font-size="14" xml:space="preserve" '
                      f'clip-path="url(#c{i})">{tspans(parts)}{cursor}</text>')
@@ -110,7 +129,7 @@ def hero():
         note_svgs.append(f"""<g opacity="0">
   {anim("opacity", [(0, 0), (t0, 0), (t0 + 0.03, 1), (fade[0], 1), (fade[1], 0), (1, 0)], D)}
   {anim("transform", [(0, "0 -14"), (t0, "0 -14"), (t0 + 0.03, "0 0"), (1, "0 0")], D, tag="animateTransform", extra=' type="translate"')}
-  <rect x="{nx}" y="{ny}" width="{nw}" height="{nh}" rx="16" fill="#ffffff" fill-opacity="0.2" stroke="#ffffff" stroke-opacity="0.25"/>
+  <rect x="{nx}" y="{ny}" width="{nw}" height="{nh}" rx="16" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.2"/>
   <rect x="{nx + 9}" y="{ny + 11}" width="28" height="28" rx="7" fill="{fill}"/>
   <text x="{nx + 23}" y="{ny + 30}" text-anchor="middle" class="sans" font-size="14" font-weight="800" fill="#fff">{letter}</text>
   <text x="{nx + 45}" y="{ny + 21}" class="sans" font-size="11.5" font-weight="700" fill="#fff">{esc(name)}</text>
@@ -125,33 +144,32 @@ def hero():
     title_a = [(0, 1), (done, 1), (done + 0.01, 0), (fade[1], 0), (fade[1] + 0.01, 1), (1, 1)]
     title_b = [(0, 0), (done, 0), (done + 0.01, 1), (fade[1], 1), (fade[1] + 0.01, 0), (1, 0)]
 
-    body = f"""{card_bg(W, H)}
+    body = f"""{card_bg(W, H, WINDOW)}
 <defs>
-  <linearGradient id="name" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ffb199"/></linearGradient>
-  <radialGradient id="glow"><stop offset="0" stop-color="{ORANGE}" stop-opacity="0.45"/><stop offset="0.5" stop-color="#8b5cf6" stop-opacity="0.18"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+  <linearGradient id="name" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="{TYPE_DECL}"/></linearGradient>
+  <radialGradient id="glow"><stop offset="0" stop-color="{SWIFT}" stop-opacity="0.28"/><stop offset="0.55" stop-color="{OTHER_TYPE}" stop-opacity="0.08"/><stop offset="1" stop-color="{OTHER_TYPE}" stop-opacity="0"/></radialGradient>
   <linearGradient id="wall" x1="0" y1="0" x2="0.4" y2="1">
-    <stop offset="0" stop-color="#ff9a5c"/><stop offset="0.35" stop-color="{ORANGE}"/>
+    <stop offset="0" stop-color="#ff9a5c"/><stop offset="0.35" stop-color="{SWIFT}"/>
     <stop offset="0.75" stop-color="#9b4dea"/><stop offset="1" stop-color="#1e1b4b"/>
   </linearGradient>
   <linearGradient id="ic0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#047857"/></linearGradient>
   <linearGradient id="ic1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
-  <linearGradient id="ic2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="{ORANGE}"/></linearGradient>
+  <linearGradient id="ic2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="{SWIFT}"/></linearGradient>
   <clipPath id="screen"><rect x="{px + 9}" y="{py + 9}" width="{pw - 18}" height="{ph - 18}" rx="36"/></clipPath>
   {"".join(clips)}
 </defs>
 
 <text x="32" y="68" class="sans" font-size="42" font-weight="800" fill="url(#name)">Mohamed Haggag</text>
-<text x="32" y="102" class="sans" font-size="17" fill="#9aa4bf">Senior iOS Developer <tspan fill="{ORANGE}">·</tspan> turning ideas into apps people use every day</text>
+<text x="32" y="102" class="mono" font-size="14" fill="{COMMENT}">// Senior iOS Developer · turning ideas into apps people use every day</text>
 
 <!-- Xcode-style build window -->
-<rect x="24" y="124" width="596" height="312" rx="14" fill="#0d1117" stroke="#2a3042"/>
-<path d="M24 160V138a14 14 0 0 1 14-14H606a14 14 0 0 1 14 14V160Z" fill="#161b26"/>
-<circle cx="46" cy="142" r="6" fill="#ff5f57"/><circle cx="66" cy="142" r="6" fill="#febc2e"/><circle cx="86" cy="142" r="6" fill="#28c840"/>
-<text x="330" y="147" text-anchor="middle" class="sans" font-size="12.5" fill="{MUTED}">Building “Mohamed Haggag”…{anim("opacity", title_a, D)}</text>
-<text x="330" y="147" text-anchor="middle" class="sans" font-size="12.5" fill="{MUTED}" opacity="0"><tspan fill="{GREEN}">✓ Build Succeeded</tspan>  |  Today at 9:41{anim("opacity", title_b, D)}</text>
-<rect x="24" y="160" width="0" height="2" fill="{BLUE}">
+<rect x="24" y="124" width="596" height="312" rx="12" fill="{EDITOR}" stroke="{BORDER}"/>
+{title_bar(24, 124, 596, "", r=12, h=36)}
+<text x="330" y="146.5" text-anchor="middle" class="sans" font-size="12.5" fill="{COMMENT}">Building “Mohamed Haggag”…{anim("opacity", title_a, D)}</text>
+<text x="330" y="146.5" text-anchor="middle" class="sans" font-size="12.5" fill="{COMMENT}" opacity="0"><tspan fill="{SUCCESS}">✓ Build Succeeded</tspan>  |  Today at 9:41{anim("opacity", title_b, D)}</text>
+<rect x="24" y="159" width="0" height="2" fill="{URL}">
   {anim("width", [(0, 0), (0.03, 0), (done, 596), (fade[1], 596), (fade[1] + 0.01, 0), (1, 0)], D)}
-  {anim("fill", [(0, BLUE), (done, BLUE), (done + 0.01, GREEN), (fade[1], GREEN), (fade[1] + 0.01, BLUE), (1, BLUE)], D)}
+  {anim("fill", [(0, URL), (done, URL), (done + 0.01, SUCCESS), (fade[1], SUCCESS), (fade[1] + 0.01, URL), (1, URL)], D)}
 </rect>
 <g>
   {anim("opacity", [(0, 1), (fade[0], 1), (fade[1], 0), (1, 0)], D)}
@@ -185,13 +203,95 @@ def hero():
 </rect>
 <g opacity="0">
   {anim("opacity", island_txt, D)}
-  <circle cx="{cx - 80}" cy="{py + 33.5}" r="7" fill="{GREEN}"/>
+  <circle cx="{cx - 80}" cy="{py + 33.5}" r="7" fill="{SUCCESS}"/>
   <path d="M{cx - 83.5} {py + 33.5}l2.5 2.5 4.5-5" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="{cx + 6}" y="{py + 37.5}" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#fff">Shipped to the App Store</text>
 </g>"""
     return svg(W, H, "Mohamed Haggag, Senior iOS Developer",
                "An Xcode-style build log compiles Mohamed's skills and succeeds, then an iPhone lock screen "
                "receives notifications from apps he shipped: Aseel, the Super App and his Beetleware team.", body)
+
+
+# -------------------------------------------------------------- whoami ----
+
+def whoami():
+    W = 960
+    K = lambda t: (t, KEYWORD, "700")
+    P = lambda t: (t, PLAIN)
+    S = lambda t: (t, STRING)
+    C = lambda t: (t, COMMENT)
+    DECL = lambda t: (t, OTHER_DECL)
+    PT = lambda t: (t, PROJECT_TYPE)
+    OT = lambda t: (t, OTHER_TYPE)
+    PF = lambda t: (t, PROJECT_FUNC)
+
+    def array(name, pad, items):
+        parts = [P("    "), K("let"), P(" "), DECL(name), P(" " * pad + "= [")]
+        for i, item in enumerate(items):
+            parts += [S(f'"{item}"')] + ([P(", ")] if i < len(items) - 1 else [])
+        return parts + [P("]")]
+
+    code = [
+        [C("//  whoami.swift")],
+        [C("//  Created by Mohamed Haggag · Cairo, Egypt")],
+        [],
+        [K("import"), P(" SwiftUI")],
+        [],
+        [K("struct"), P(" "), (("MohamedHaggag"), TYPE_DECL), P(": "), PT("SeniorIOSEngineer"), P(" {")],
+        [P("    "), K("let"), P(" "), DECL("role"), P("       = "), S('"Senior iOS Developer @ Beetleware"')],
+        [P("    "), K("let"), P(" "), DECL("team"), P("       = "), ("4", NUMBER), P("  "), C("// iOS engineers I lead")],
+        [P("    "), K("let"), P(" "), DECL("experience"), P(" = "), S('"8+ years · KSA · Iraq · Egypt"')],
+        [],
+        array("languages", 4, ["Swift 6", "SwiftUI", "UIKit", "Combine", "async/await"]),
+        array("architecture", 1, ["Clean Architecture", "MVVM", "VIP", "VIPER", "SPM"]),
+        array("superpowers", 2, ["E2EE · CryptoKit", "Apple Pay · Mada", "SignalR · WebRTC"]),
+        array("delivery", 5, ["Fastlane", "Bitrise", "GitHub Actions", "Xcode Cloud"]),
+        [],
+        [P("    "), K("var"), P(" "), DECL("currentlyBuilding"), P(": "), OT("String"), P(" { "),
+         S('"Super app: chat · calls · wallet · e-gov"'), P(" }")],
+        [P("    "), K("var"), P(" "), DECL("growingToward"), P(": "), OT("String"), P(" { "),
+         S('"Product-focused technical leadership"'), P(" }")],
+        [],
+        [P("    "), K("func"), P(" "), DECL("collaborate"), P("(on idea: "), PT("Idea"), P(") "), K("async"), P(" "),
+         K("throws"), P(" -> "), PT("App"), P(" {")],
+        [P("        "), K("try"), P(" "), K("await"), P(" idea."), PF("validate"), P("()."), PF("design"), P("()."),
+         PF("build"), P("()."), PF("ship"), P("()")],
+        [P("    }")],
+        [P("}")],
+    ]
+    top, lh = 76, 21
+    H = top + len(code) * lh + 22
+    active = 19  # line with the cursor (0-based)
+
+    rows = []
+    for i, parts in enumerate(code):
+        y = top + i * lh + 15
+        rows.append(f'<text x="58" y="{y}" text-anchor="end" class="mono" font-size="12" '
+                    f'fill="{PLAIN if i == active else LINE_NO}">{i + 1}</text>')
+        if parts:
+            rows.append(f'<text x="78" y="{y}" class="mono" font-size="13.5" xml:space="preserve">{tspans(parts)}'
+                        + (f'<tspan fill="{PLAIN}">▏<animate attributeName="fill-opacity" values="1;1;0;0" '
+                           f'keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/></tspan>' if i == active else "")
+                        + '</text>')
+
+    body = f"""{card_bg(W, H)}
+{title_bar(0, 0, W, "", h=40)}
+<rect x="300" y="9" width="360" height="22" rx="6" fill="#000" fill-opacity="0.25"/>
+<text x="480" y="24.5" text-anchor="middle" class="sans" font-size="12" fill="{COMMENT}">7aggag  <tspan fill="{SUCCESS}">✓</tspan>  Build Succeeded  |  Today at 9:41</text>
+<!-- tab + jump bar -->
+<rect x="0" y="40" width="{W}" height="26" fill="#252529"/>
+<rect x="0" y="40" width="168" height="26" fill="{EDITOR}"/>
+<rect x="14" y="48" width="11" height="11" rx="2.5" fill="{SWIFT}"/>
+<text x="32" y="57.5" class="sans" font-size="12" fill="{PLAIN}">whoami.swift</text>
+<text x="186" y="57.5" class="sans" font-size="11.5" fill="{COMMENT}">7aggag  ›  Sources  ›  <tspan fill="{SWIFT}">■</tspan> whoami.swift  ›  <tspan fill="{TYPE_DECL}">S</tspan> MohamedHaggag</text>
+<path d="M0 66H{W}" stroke="#000" stroke-opacity="0.45"/>
+<rect x="0" y="{top + active * lh}" width="{W}" height="{lh}" fill="{CURRENT_LINE}"/>
+{chr(10).join(rows)}"""
+    return svg(W, H, "whoami.swift",
+               "A Swift struct describing Mohamed Haggag in Xcode's Default Dark theme: Senior iOS Developer at "
+               "Beetleware leading 4 iOS engineers, 8+ years shipping to KSA, Iraq and Egypt; Swift 6, SwiftUI, "
+               "UIKit, Combine, async/await; Clean Architecture, MVVM, VIP, VIPER, SPM; E2EE with CryptoKit, "
+               "Apple Pay and Mada, SignalR and WebRTC; Fastlane, Bitrise, GitHub Actions, Xcode Cloud.", body)
 
 
 # ---------------------------------------------------------------- apps ----
@@ -226,7 +326,7 @@ def apps():
                     f'font-weight="800" fill="#fff">{glyph}</text>')
         badge_svg = ""
         if badge:
-            badge_svg = (f'<circle cx="{x + size - 4}" cy="{top + 4}" r="13" fill="#ff3b30" stroke="#120f26" stroke-width="2.5"/>'
+            badge_svg = (f'<circle cx="{x + size - 4}" cy="{top + 4}" r="13" fill="#ff3b30" stroke="{EDITOR}" stroke-width="2.5"/>'
                          f'<text x="{x + size - 4}" y="{top + 8.5}" text-anchor="middle" class="sans" font-size="12.5" '
                          f'font-weight="700" fill="#fff">{badge}</text>')
         # Home-screen "jiggle mode": a short wiggle every few seconds, staggered per icon
@@ -238,24 +338,25 @@ def apps():
   <rect x="{x}" y="{top}" width="{size}" height="{size / 2}" rx="18" fill="url(#gloss)"/>
   {mark}{badge_svg}
 </g>
-<text x="{cx}" y="{top + size + 26}" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#fff">{esc(name)}</text>
-<text x="{cx}" y="{top + size + 44}" text-anchor="middle" class="sans" font-size="11.5" fill="#fff" fill-opacity="0.6">{esc(cap)}</text>""")
+<text x="{cx}" y="{top + size + 26}" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="{PLAIN}">{esc(name)}</text>
+<text x="{cx}" y="{top + size + 44}" text-anchor="middle" class="sans" font-size="11.5" fill="{COMMENT}">{esc(cap)}</text>""")
 
     stats = [("24", "Aseel releases since 2024"), ("4.6★", "from 7.4K App Store ratings"), ("3", "markets: KSA · Iraq · Egypt")]
     dock_w = W - 96
     stat_svgs = []
     for k, (big, small) in enumerate(stats):
         sx = 48 + dock_w / 6 + k * dock_w / 3
-        stat_svgs.append(f'<text x="{sx}" y="250" text-anchor="middle" class="sans" font-size="15" fill="#fff" fill-opacity="0.75">'
-                         f'<tspan font-size="20" font-weight="800" fill="#fff" fill-opacity="1">{esc(big)}</tspan>  {esc(small)}</text>')
+        stat_svgs.append(f'<text x="{sx}" y="250" text-anchor="middle" class="sans" font-size="15" fill="{COMMENT}">'
+                         f'<tspan font-size="20" font-weight="800" fill="{NUMBER}">{esc(big)}</tspan>  '
+                         f'<tspan fill="{PLAIN}">{esc(small)}</tspan></text>')
     body = f"""{card_bg(W, H)}
 <defs>
   {"".join(defs)}
   <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 </defs>
-<text x="48" y="34" class="mono" font-size="12.5" fill="{MUTED}">~/Applications <tspan fill="{GREEN}">●</tspan> shipped to the App Store</text>
+<text x="48" y="34" class="mono" font-size="12.5" fill="{COMMENT}">// ~/Applications <tspan fill="{SUCCESS}">●</tspan> shipped to the App Store</text>
 {chr(10).join(icons)}
-<rect x="48" y="216" width="{dock_w}" height="56" rx="20" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-opacity="0.1"/>
+<rect x="48" y="216" width="{dock_w}" height="56" rx="16" fill="{CURRENT_LINE}" stroke="{BORDER}"/>
 {chr(10).join(stat_svgs)}"""
     return svg(W, H, "Apps Mohamed Haggag shipped",
                "An iOS home screen with seven apps: Super App, Aseel (24 releases, 4.6 stars from 7.4K ratings), "
@@ -267,10 +368,10 @@ def apps():
 def journey():
     W, H = 960, 400
     rows = [
-        ("a1f9e3c", [("(", YELLOW), ("HEAD -> ", CYAN), ("main", GREEN), (") ", YELLOW)],
+        ("a1f9e3c", [("(", COMMENT), ("HEAD -> ", TYPE_DECL), ("main", SUCCESS), (") ", COMMENT)],
          "Beetleware · Senior iOS Developer · leading 4 iOS engineers", "Mar 2024 → now", 0),
         ("7c2d0b8", [], "ElMasadr · Senior iOS Developer · shipped Istend (4.6★)", "Sep 2023 → Apr 2024", 0),
-        ("e41aa90", [("(", YELLOW), ("tag: promoted", YELLOW), (") ", YELLOW)],
+        ("e41aa90", [("(", COMMENT), ("tag: promoted", KEYWORD), (") ", COMMENT)],
          "Fintech-SA · Senior iOS Developer · led the iOS team", "Jan 2023 → Sep 2023", 1),
         ("3b7f21d", [], "Fintech-SA (Rasid Payments) · iOS Developer · payments suite", "Jan 2022 → Dec 2022", 1),
         ("9d02c4e", [], "ICOSOL · iOS Developer · apps shipped to the App Store", "Sep 2020 → Dec 2021", 0),
@@ -290,37 +391,35 @@ def journey():
   {once("height", 0, ys[-1] - ys[0] + 24, reveal(n - 1), total)}
 </rect></clipPath>
 <g clip-path="url(#grow)" fill="none" stroke-width="3" stroke-linecap="round">
-  <path d="M{lane[0]} {ys[-1]}V{ys[0]}" stroke="{ORANGE}"/>
-  <path d="{branch}" stroke="{PURPLE}"/>
+  <path d="M{lane[0]} {ys[-1]}V{ys[0]}" stroke="{PREPROC}"/>
+  <path d="{branch}" stroke="{OTHER_TYPE}"/>
 </g>"""
 
     row_svgs = []
     for r, (sha, refs, msg, when, ln) in enumerate(rows):
         x, y, t = lane[ln], ys[r], reveal(r)
-        color = PURPLE if ln else ORANGE
+        color = OTHER_TYPE if ln else PREPROC
         head = ""
         if r == 0:
-            head = (f'<circle cx="{x}" cy="{y}" r="7" fill="none" stroke="{ORANGE}" stroke-width="2">'
+            head = (f'<circle cx="{x}" cy="{y}" r="7" fill="none" stroke="{PREPROC}" stroke-width="2">'
                     f'<animate attributeName="r" values="7;16" dur="2s" begin="{t + 0.4:.2f}s" repeatCount="indefinite"/>'
                     f'<animate attributeName="stroke-opacity" values="0.8;0" dur="2s" begin="{t + 0.4:.2f}s" repeatCount="indefinite"/></circle>')
-        node_fill = ORANGE if r == 0 else "#0f1428"
+        node_fill = PREPROC if r == 0 else EDITOR
         row_svgs.append(f"""<g opacity="0">
   {once("opacity", 0, 1, t, 0.35)}
   {once("transform", "-10 0", "0 0", t, 0.35, tag="animateTransform", extra=' type="translate"')}
   {head}<circle cx="{x}" cy="{y}" r="6.5" fill="{node_fill}" stroke="{color}" stroke-width="3"/>
-  <text x="112" y="{y + 4.5}" class="mono" font-size="13" fill="{YELLOW}">{sha}</text>
-  <text x="180" y="{y + 4.5}" class="mono" font-size="13" xml:space="preserve">{tspans(refs)}{tspans([(msg, BRIGHT)])}</text>
-  <text x="{W - 32}" y="{y + 4.5}" text-anchor="end" class="sans" font-size="12.5" fill="{MUTED}">{esc(when)}</text>
+  <text x="112" y="{y + 4.5}" class="mono" font-size="13" fill="{NUMBER}">{sha}</text>
+  <text x="180" y="{y + 4.5}" class="mono" font-size="13" xml:space="preserve">{tspans(refs)}{tspans([(msg, PLAIN)])}</text>
+  <text x="{W - 32}" y="{y + 4.5}" text-anchor="end" class="sans" font-size="12.5" fill="{COMMENT}">{esc(when)}</text>
 </g>""")
 
     body = f"""{card_bg(W, H)}
-<path d="M0 22A22 22 0 0 1 22 0H938A22 22 0 0 1 960 22V44H0Z" fill="#161b26"/>
-<circle cx="26" cy="22" r="6" fill="#ff5f57"/><circle cx="46" cy="22" r="6" fill="#febc2e"/><circle cx="66" cy="22" r="6" fill="#28c840"/>
-<text x="480" y="27" text-anchor="middle" class="sans" font-size="12.5" fill="{MUTED}">haggag — career.git</text>
-<text x="32" y="78" class="mono" font-size="13.5" xml:space="preserve"><tspan fill="{GREEN}">$ </tspan><tspan fill="{BRIGHT}">git log </tspan><tspan fill="{MUTED}">--graph --oneline --decorate</tspan></text>
+{title_bar(0, 0, W, "haggag — career.git", h=44)}
+<text x="32" y="78" class="mono" font-size="13.5" xml:space="preserve"><tspan fill="{COMMENT}">$ </tspan><tspan fill="{KEYWORD}" font-weight="700">git log </tspan><tspan fill="{OTHER_DECL}">--graph --oneline --decorate</tspan></text>
 {graph}
 {chr(10).join(row_svgs)}
-<text x="32" y="{ys[-1] + 40}" class="mono" font-size="13" fill="{MUTED}" opacity="0">(END){once("opacity", 0, 1, reveal(0) + 0.4, 0.3)}</text>"""
+<text x="32" y="{ys[-1] + 40}" class="mono" font-size="13" fill="{COMMENT}" opacity="0">(END){once("opacity", 0, 1, reveal(0) + 0.4, 0.3)}</text>"""
     return svg(W, H, "Mohamed Haggag's career as a git log",
                "A git log graph of his career, oldest at the bottom: B.Sc. Computer Science at Mansoura University, "
                "freelance iOS development, ICOSOL, Fintech-SA (iOS Developer, then promoted to Senior), ElMasadr, "
@@ -329,6 +428,6 @@ def journey():
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, make in (("hero", hero), ("apps", apps), ("journey", journey)):
+    for name, make in (("hero", hero), ("whoami", whoami), ("apps", apps), ("journey", journey)):
         (OUT / f"{name}.svg").write_text(make(), encoding="utf-8")
         print("wrote", OUT / f"{name}.svg")
