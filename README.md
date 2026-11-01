@@ -16,14 +16,15 @@
 ### 📱 Shipped to the App Store
 
 <p align="center">
-  <img src="assets/apps.svg" width="100%" alt="Seven apps on an iOS home screen: Super App, Aseel, Tameer Business, Sahn &amp; Rageef, Istend, Flex Kitchen and Healthy &amp; More">
+  <img src="assets/apps.svg" width="100%" alt="Eight apps on an iOS home screen: Super App, Aseel, Tameer Business, Sahn &amp; Rageef, Istend, Flex Kitchen, Healthy &amp; More and Physio Home Training">
 </p>
 
 <p align="center">
   <a href="https://apps.apple.com/sa/app/id1622681127"><b>Aseel</b></a> ·
   <a href="https://apps.apple.com/sa/app/id6471635089"><b>Istend</b></a> ·
   <a href="https://apps.apple.com/sa/app/id6451219833"><b>Flex Kitchen</b></a> ·
-  <a href="https://apps.apple.com/sa/app/id6468938766"><b>Healthy &amp; More</b></a>
+  <a href="https://apps.apple.com/sa/app/id6468938766"><b>Healthy &amp; More</b></a> ·
+  <a href="https://apps.apple.com/app/id1356046237"><b>Physio Home Training</b></a>
   <br>
   <sub>Super App, Tameer Business and Sahn &amp; Rageef are client apps built at Beetleware for Iraq and Saudi Arabia.</sub>
 </p>

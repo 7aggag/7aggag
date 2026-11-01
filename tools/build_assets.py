@@ -308,6 +308,7 @@ def apps():
         ("Istend", "4.6★ · KSA", "#c084fc", "#7e22ce", "IS", None),
         ("Flex Kitchen", "Nutrition plans", "#a3e635", "#15803d", "FK", None),
         ("Healthy & More", "Nutrition plans", "#f472b6", "#be185d", "H+", None),
+        ("Physio Home", "Sweden · rehab", "#5eead4", "#0f766e", "PH", None),
     ]
     slot = (W - 96) / len(items)
     size, top = 76, 54
@@ -340,7 +341,7 @@ def apps():
   <rect x="{x}" y="{top}" width="{size}" height="{size / 2}" rx="18" fill="url(#gloss)"/>
   {mark}{badge_svg}
 </g>
-<text x="{cx}" y="{top + size + 26}" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="{PLAIN}">{esc(name)}</text>
+<text x="{cx}" y="{top + size + 26}" text-anchor="middle" class="sans" font-size="12.5" font-weight="600" fill="{PLAIN}">{esc(name)}</text>
 <text x="{cx}" y="{top + size + 44}" text-anchor="middle" class="sans" font-size="11.5" fill="{COMMENT}">{esc(cap)}</text>""")
 
     stats = [("24", "Aseel releases since 2024"), ("4.6★", "from 7.4K App Store ratings"), ("3", "markets: KSA · Iraq · Egypt")]
@@ -361,8 +362,8 @@ def apps():
 <rect x="48" y="216" width="{dock_w}" height="56" rx="16" fill="{CURRENT_LINE}" stroke="{BORDER}"/>
 {chr(10).join(stat_svgs)}"""
     return svg(W, H, "Apps Mohamed Haggag shipped",
-               "An iOS home screen with seven apps: Super App, Aseel (24 releases, 4.6 stars from 7.4K ratings), "
-               "Tameer Business, Sahn & Rageef, Istend, Flex Kitchen and Healthy & More.", body)
+               "An iOS home screen with eight apps: Super App, Aseel (24 releases, 4.6 stars from 7.4K ratings), "
+               "Tameer Business, Sahn & Rageef, Istend, Flex Kitchen, Healthy & More and Physio Home Training.", body)
 
 
 # ------------------------------------------------------------- journey ----
@@ -376,7 +377,7 @@ def journey():
         ("e41aa90", [("(", COMMENT), ("tag: promoted", KEYWORD), (") ", COMMENT)],
          "Fintech-SA · Senior iOS Developer · led the iOS team", "Jan 2023 → Sep 2023", 1),
         ("3b7f21d", [], "Fintech-SA (Rasid Payments) · iOS Developer · payments suite", "Jan 2022 → Dec 2022", 1),
-        ("9d02c4e", [], "ICOSOL · iOS Developer · apps shipped to the App Store", "Sep 2020 → Dec 2021", 0),
+        ("9d02c4e", [], "ICOSOL · iOS Developer · shipped Physio Home Training", "Sep 2020 → Dec 2021", 0),
         ("5e8a1f0", [], "Freelance · iOS Developer · client apps incl. a pharma CRM", "Jan 2018 → Aug 2020", 0),
         ("c0ffee1", [], "Initial commit · B.Sc. Computer Science, Mansoura University", "2015 → 2019", 0),
     ]
