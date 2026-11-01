@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="444" viewBox="686 8 260 444" role="img" aria-labelledby="t d">
+<title id="t">Mohamed Haggag, Senior iOS Developer</title>
+<desc id="d">An Xcode-style build log compiles Mohamed's skills and succeeds, then an iPhone lock screen receives notifications from apps he shipped: Aseel, the Super App and his Beetleware team.</desc>
+<style>
+  .sans { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .mono { font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+</style>
+<rect width="960" height="460" rx="16" fill="#161619"/><rect x="0.5" y="0.5" width="959" height="459" rx="15.5" fill="none" stroke="#3A3A40"/>
+<defs>
+  <linearGradient id="name" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#5DD8FF"/></linearGradient>
+  <radialGradient id="glow"><stop offset="0" stop-color="#F05138" stop-opacity="0.28"/><stop offset="0.55" stop-color="#D0A8FF" stop-opacity="0.08"/><stop offset="1" stop-color="#D0A8FF" stop-opacity="0"/></radialGradient>
+  <linearGradient id="wall" x1="0" y1="0" x2="0.4" y2="1">
+    <stop offset="0" stop-color="#ff9a5c"/><stop offset="0.35" stop-color="#F05138"/>
+    <stop offset="0.75" stop-color="#9b4dea"/><stop offset="1" stop-color="#1e1b4b"/>
+  </linearGradient>
+  <linearGradient id="ic0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#047857"/></linearGradient>
+  <linearGradient id="ic1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+  <linearGradient id="ic2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#F05138"/></linearGradient>
+  <clipPath id="screen"><rect x="707" y="21" width="218" height="418" rx="36"/></clipPath>
+  <clipPath id="c0"><rect x="40" y="178" height="22" width="0"><animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.03;0.08;1" values="0;0;580;580"/></rect></clipPath><clipPath id="c1"><rect x="40" y="208" height="22" width="0"><animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.09;0.14;1" values="0;0;580;580"/></rect></clipPath><clipPath id="c2"><rect x="40" y="238" height="22" width="0"><animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.15;0.2;1" values="0;0;580;580"/></rect></clipPath><clipPath id="c3"><rect x="40" y="268" height="22" width="0"><animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.21;0.26;1" values="0;0;580;580"/></rect></clipPath><clipPath id="c4"><rect x="40" y="298" height="22" width="0"><animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.27;0.32;1" values="0;0;580;580"/></rect></clipPath><clipPath id="c5"><rect x="40" y="328" height="22" width="0"><animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.33;0.38;1" values="0;0;580;580"/></rect></clipPath><clipPath id="c6"><rect x="40" y="358" height="22" width="0"><animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.39;0.44;1" values="0;0;580;580"/></rect></clipPath><clipPath id="c7"><rect x="40" y="388" height="22" width="0"><animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.45;0.5;1" values="0;0;580;580"/></rect></clipPath>
+</defs>
+
+<text x="32" y="68" class="sans" font-size="42" font-weight="800" fill="url(#name)">Mohamed Haggag</text>
+<text x="32" y="102" class="mono" font-size="14" fill="#6C7986">// Senior iOS Developer · turning ideas into apps people use every day</text>
+
+<!-- Xcode-style build window -->
+<rect x="24" y="124" width="596" height="312" rx="12" fill="#1F1F24" stroke="#3A3A40"/>
+<path d="M24 160V136a12 12 0 0 1 12-12H608a12 12 0 0 1 12 12V160Z" fill="#2B2B30"/><path d="M24 160H620" stroke="#000" stroke-opacity="0.5"/><circle cx="46" cy="142.0" r="6" fill="#ff5f57"/><circle cx="66" cy="142.0" r="6" fill="#febc2e"/><circle cx="86" cy="142.0" r="6" fill="#28c840"/>
+<text x="330" y="146.5" text-anchor="middle" class="sans" font-size="12.5" fill="#6C7986">Building “Mohamed Haggag”…<animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.12;0.13;0.97;0.98;1" values="1;1;0;0;1;1"/></text>
+<text x="330" y="146.5" text-anchor="middle" class="sans" font-size="12.5" fill="#6C7986" opacity="0"><tspan fill="#32D74B">✓ Build Succeeded</tspan>  |  Today at 9:41<animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.12;0.13;0.97;0.98;1" values="0;0;1;1;0;0"/></text>
+<rect x="24" y="159" width="0" height="2" fill="#5482FF">
+  <animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.03;0.12;0.97;0.98;1" values="0;0;596;596;0;0"/>
+  <animate attributeName="fill" dur="16s" repeatCount="indefinite" keyTimes="0;0.12;0.13;0.97;0.98;1" values="#5482FF;#5482FF;#32D74B;#32D74B;#5482FF;#5482FF"/>
+</rect>
+<g>
+  <animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.93;0.97;1" values="1;1;0;0"/>
+  <text x="44" y="194" class="mono" font-size="14" xml:space="preserve" clip-path="url(#c0)"><tspan fill="#6C7986">$ </tspan><tspan fill="#FC5FA3" font-weight="700">xcodebuild </tspan><tspan fill="#41A1C0">-scheme </tspan><tspan fill="#FC6A5D">"Mohamed Haggag" </tspan><tspan fill="#41A1C0">-configuration </tspan><tspan fill="#9EF1DD">Senior</tspan></text>
+<text x="44" y="224" class="mono" font-size="14" xml:space="preserve" clip-path="url(#c1)"><tspan fill="#FD8F3F">▸ </tspan><tspan fill="#FC5FA3" font-weight="700">Compiling </tspan><tspan fill="#DFDFE0">Swift 6 · SwiftUI · UIKit · Combine · async/await</tspan></text>
+<text x="44" y="254" class="mono" font-size="14" xml:space="preserve" clip-path="url(#c2)"><tspan fill="#FD8F3F">▸ </tspan><tspan fill="#FC5FA3" font-weight="700">Linking   </tspan><tspan fill="#DFDFE0">Clean Architecture · MVVM · VIP · VIPER · SPM</tspan></text>
+<text x="44" y="284" class="mono" font-size="14" xml:space="preserve" clip-path="url(#c3)"><tspan fill="#FD8F3F">▸ </tspan><tspan fill="#FC5FA3" font-weight="700">Securing  </tspan><tspan fill="#DFDFE0">E2EE (CryptoKit) · Keychain · SSL pinning</tspan></text>
+<text x="44" y="314" class="mono" font-size="14" xml:space="preserve" clip-path="url(#c4)"><tspan fill="#FD8F3F">▸ </tspan><tspan fill="#FC5FA3" font-weight="700">Wiring    </tspan><tspan fill="#DFDFE0">Apple Pay · Mada · Nafath · SignalR · WebRTC</tspan></text>
+<text x="44" y="344" class="mono" font-size="14" xml:space="preserve" clip-path="url(#c5)"><tspan fill="#FD8F3F">▸ </tspan><tspan fill="#FC5FA3" font-weight="700">Testing   </tspan><tspan fill="#DFDFE0">XCTest · XCUITest · 8+ years in production</tspan></text>
+<text x="44" y="374" class="mono" font-size="14" xml:space="preserve" clip-path="url(#c6)"><tspan fill="#FD8F3F">▸ </tspan><tspan fill="#FC5FA3" font-weight="700">Shipping  </tspan><tspan fill="#DFDFE0">Fastlane → App Store · KSA · Iraq · Egypt</tspan></text>
+<text x="44" y="404" class="mono" font-size="14" xml:space="preserve" clip-path="url(#c7)"><tspan fill="#32D74B" font-weight="700">** BUILD SUCCEEDED ** </tspan><tspan fill="#DFDFE0">Senior iOS Developer, leading 4 engineers </tspan><tspan fill="#DFDFE0">▋<animate attributeName="fill-opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></tspan></text>
+</g>
+
+<!-- iPhone lock screen -->
+
+<rect x="695.5" y="108" width="3" height="34" rx="1.5" fill="#3b3b44"/>
+<rect x="695.5" y="152" width="3" height="56" rx="1.5" fill="#3b3b44"/>
+<rect x="933.5" y="132" width="3" height="70" rx="1.5" fill="#3b3b44"/>
+<rect x="698" y="12" width="236" height="436" rx="44" fill="#0a0a0c" stroke="#3b3b44" stroke-width="2.5"/>
+<g clip-path="url(#screen)">
+  <rect x="707" y="21" width="218" height="418" fill="url(#wall)"/>
+  <circle cx="738" cy="342" r="90" fill="#ffffff" fill-opacity="0.07"/>
+  <circle cx="914" cy="132" r="70" fill="#ffffff" fill-opacity="0.06"/>
+  <text x="816.0" y="90" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#fff" fill-opacity="0.88">Cairo, Egypt</text>
+  <text x="816.0" y="148" text-anchor="middle" class="sans" font-size="60" font-weight="700" fill="#fff">9:41</text>
+  <g opacity="0">
+  <animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.16;0.19;0.93;0.97;1" values="0;0;1;1;0;0"/>
+  <animateTransform attributeName="transform" dur="16s" repeatCount="indefinite" keyTimes="0;0.16;0.19;1" values="0 -14;0 -14;0 0;0 0" type="translate"/>
+  <rect x="717" y="170" width="198" height="60" rx="16" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.2"/>
+  <rect x="726" y="181" width="28" height="28" rx="7" fill="url(#ic0)"/>
+  <text x="740" y="200" text-anchor="middle" class="sans" font-size="14" font-weight="800" fill="#fff">A</text>
+  <text x="762" y="191" class="sans" font-size="11.5" font-weight="700" fill="#fff">Aseel</text>
+  <text x="905" y="191" text-anchor="end" class="sans" font-size="10" fill="#fff" fill-opacity="0.7">now</text>
+  <text x="762" y="206" class="sans" font-size="10.5" fill="#fff" fill-opacity="0.92">24 App Store releases</text>
+  <text x="762" y="220" class="sans" font-size="10.5" fill="#fff" fill-opacity="0.92">4.6★ · 7.4K ratings</text>
+</g>
+<g opacity="0">
+  <animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.22;0.25;0.93;0.97;1" values="0;0;1;1;0;0"/>
+  <animateTransform attributeName="transform" dur="16s" repeatCount="indefinite" keyTimes="0;0.22;0.25;1" values="0 -14;0 -14;0 0;0 0" type="translate"/>
+  <rect x="717" y="238" width="198" height="60" rx="16" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.2"/>
+  <rect x="726" y="249" width="28" height="28" rx="7" fill="url(#ic1)"/>
+  <text x="740" y="268" text-anchor="middle" class="sans" font-size="14" font-weight="800" fill="#fff">S</text>
+  <text x="762" y="259" class="sans" font-size="11.5" font-weight="700" fill="#fff">Super App</text>
+  <text x="905" y="259" text-anchor="end" class="sans" font-size="10" fill="#fff" fill-opacity="0.7">now</text>
+  <text x="762" y="274" class="sans" font-size="10.5" fill="#fff" fill-opacity="0.92">E2EE chat · VoIP calls</text>
+  <text x="762" y="288" class="sans" font-size="10.5" fill="#fff" fill-opacity="0.92">Wallet · gov e-services</text>
+</g>
+<g opacity="0">
+  <animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.28;0.31;0.93;0.97;1" values="0;0;1;1;0;0"/>
+  <animateTransform attributeName="transform" dur="16s" repeatCount="indefinite" keyTimes="0;0.28;0.31;1" values="0 -14;0 -14;0 0;0 0" type="translate"/>
+  <rect x="717" y="306" width="198" height="60" rx="16" fill="#ffffff" fill-opacity="0.16" stroke="#ffffff" stroke-opacity="0.2"/>
+  <rect x="726" y="317" width="28" height="28" rx="7" fill="url(#ic2)"/>
+  <text x="740" y="336" text-anchor="middle" class="sans" font-size="14" font-weight="800" fill="#fff">B</text>
+  <text x="762" y="327" class="sans" font-size="11.5" font-weight="700" fill="#fff">Beetleware</text>
+  <text x="905" y="327" text-anchor="end" class="sans" font-size="10" fill="#fff" fill-opacity="0.7">now</text>
+  <text x="762" y="342" class="sans" font-size="10.5" fill="#fff" fill-opacity="0.92">Leading 4 iOS engineers</text>
+  <text x="762" y="356" class="sans" font-size="10.5" fill="#fff" fill-opacity="0.92">10+ apps in production</text>
+</g>
+  <circle cx="748" cy="400" r="18" fill="#000" fill-opacity="0.35"/>
+  <rect x="744" y="390" width="8" height="18" rx="2" fill="#fff" fill-opacity="0.9"/>
+  <circle cx="884" cy="400" r="18" fill="#000" fill-opacity="0.35"/>
+  <rect x="875" y="393" width="18" height="13" rx="3" fill="#fff" fill-opacity="0.9"/>
+  <circle cx="884" cy="399.5" r="3.5" fill="#1e1b4b"/>
+  <rect x="766.0" y="426" width="100" height="4" rx="2" fill="#fff" fill-opacity="0.85"/>
+</g>
+<!-- Dynamic Island: expands into a live activity when the build ships -->
+<rect x="770.0" y="32" width="92" height="27" rx="13.5" fill="#000">
+  <animate attributeName="x" dur="16s" repeatCount="indefinite" keyTimes="0;0.12;0.15;0.93;0.97;1" values="770.0;770.0;718.0;718.0;770.0;770.0"/>
+  <animate attributeName="width" dur="16s" repeatCount="indefinite" keyTimes="0;0.12;0.15;0.93;0.97;1" values="92;92;196;196;92;92"/>
+</rect>
+<g opacity="0">
+  <animate attributeName="opacity" dur="16s" repeatCount="indefinite" keyTimes="0;0.15;0.17;0.92;0.93;1" values="0;0;1;1;0;0"/>
+  <circle cx="736.0" cy="45.5" r="7" fill="#32D74B"/>
+  <path d="M732.5 45.5l2.5 2.5 4.5-5" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="822.0" y="49.5" text-anchor="middle" class="sans" font-size="11" font-weight="600" fill="#fff">Shipped to the App Store</text>
+</g>
+</svg>

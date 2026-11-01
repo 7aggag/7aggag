@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://7aggag.github.io/"><img src="https://img.shields.io/badge/Portfolio-7aggag.github.io-1F1F24?style=for-the-badge&logo=apple&logoColor=white" alt="Portfolio"></a>
   <a href="https://www.linkedin.com/in/haggagovic/"><img src="https://img.shields.io/badge/LinkedIn-haggagovic-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="mailto:m.haggagovic@gmail.com"><img src="https://img.shields.io/badge/Email-m.haggagovic%40gmail.com-F05138?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
   <img src="https://img.shields.io/badge/Based_in-Cairo,_Egypt-1b1338?style=for-the-badge" alt="Based in Cairo, Egypt">

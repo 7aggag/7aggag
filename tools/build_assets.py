@@ -51,8 +51,10 @@ def once(attr, frm, to, begin, dur, tag="animate", extra=""):
             f'dur="{dur}s" fill="freeze"{extra}/>')
 
 
-def svg(w, h, title, desc, body):
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
+def svg(w, h, title, desc, body, view=None):
+    view = view or (0, 0, w, h)
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{view[2]}" height="{view[3]}" '
+            f'viewBox="{" ".join(map(str, view))}" '
             f'role="img" aria-labelledby="t d">\n<title id="t">{esc(title)}</title>\n'
             f'<desc id="d">{esc(desc)}</desc>\n{STYLE}\n{body}\n</svg>\n')
 
@@ -84,7 +86,8 @@ def tspans(parts):
 
 # ---------------------------------------------------------------- hero ----
 
-def hero():
+def hero(done=0.50, crop=None):
+    """crop=(x, y, w, h) exports just that region, e.g. the phone for the website."""
     W, H, D = 960, 460, 16
     step = lambda verb, rest: [("▸ ", PREPROC), (f"{verb:<10}", KEYWORD, "700"), (rest, PLAIN)]
     lines = [
@@ -98,7 +101,6 @@ def hero():
         step("Shipping", "Fastlane → App Store · KSA · Iraq · Egypt"),
         [("** BUILD SUCCEEDED ** ", SUCCESS, "700"), ("Senior iOS Developer, leading 4 engineers ", PLAIN)],
     ]
-    done = 0.50          # build finishes here (fraction of the loop)
     fade = (0.93, 0.97)  # everything resets here
 
     clips, texts = [], []
@@ -177,7 +179,7 @@ def hero():
 </g>
 
 <!-- iPhone lock screen -->
-<circle cx="{cx}" cy="230" r="250" fill="url(#glow)"/>
+{"" if crop else f'<circle cx="{cx}" cy="230" r="250" fill="url(#glow)"/>'}
 <rect x="{px - 2.5}" y="{py + 96}" width="3" height="34" rx="1.5" fill="#3b3b44"/>
 <rect x="{px - 2.5}" y="{py + 140}" width="3" height="56" rx="1.5" fill="#3b3b44"/>
 <rect x="{px + pw - 0.5}" y="{py + 120}" width="3" height="70" rx="1.5" fill="#3b3b44"/>
@@ -209,7 +211,7 @@ def hero():
 </g>"""
     return svg(W, H, "Mohamed Haggag, Senior iOS Developer",
                "An Xcode-style build log compiles Mohamed's skills and succeeds, then an iPhone lock screen "
-               "receives notifications from apps he shipped: Aseel, the Super App and his Beetleware team.", body)
+               "receives notifications from apps he shipped: Aseel, the Super App and his Beetleware team.", body, crop)
 
 
 # -------------------------------------------------------------- whoami ----
@@ -428,6 +430,7 @@ def journey():
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, make in (("hero", hero), ("whoami", whoami), ("apps", apps), ("journey", journey)):
+    phone = lambda: hero(done=0.12, crop=(686, 8, 260, 444))  # website hero: notifications arrive sooner
+    for name, make in (("hero", hero), ("phone", phone), ("whoami", whoami), ("apps", apps), ("journey", journey)):
         (OUT / f"{name}.svg").write_text(make(), encoding="utf-8")
         print("wrote", OUT / f"{name}.svg")
