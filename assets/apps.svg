@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-labelledby="t d">
+<title id="t">Apps Mohamed Haggag shipped</title>
+<desc id="d">An iOS home screen with seven apps: Super App, Aseel (24 releases, 4.6 stars from 7.4K ratings), Tameer Business, Sahn &amp; Rageef, Istend, Flex Kitchen and Healthy &amp; More.</desc>
+<style>
+  .sans { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .mono { font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+</style>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#1b1338"/>
+  </linearGradient>
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
+  </pattern>
+</defs>
+<rect width="960" height="300" rx="22" fill="url(#bg)"/>
+<rect width="960" height="300" rx="22" fill="url(#grid)"/>
+<rect x="0.5" y="0.5" width="959" height="299" rx="21.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+<defs>
+  <linearGradient id="a0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#2563eb"/></linearGradient><linearGradient id="a1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#047857"/></linearGradient><linearGradient id="a2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#4338ca"/></linearGradient><linearGradient id="a3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#dc2626"/></linearGradient><linearGradient id="a4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c084fc"/><stop offset="1" stop-color="#7e22ce"/></linearGradient><linearGradient id="a5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a3e635"/><stop offset="1" stop-color="#15803d"/></linearGradient><linearGradient id="a6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f472b6"/><stop offset="1" stop-color="#be185d"/></linearGradient>
+  <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+</defs>
+<text x="48" y="34" class="mono" font-size="12.5" fill="#8b93a7">~/Applications <tspan fill="#3fb950">●</tspan> shipped to the App Store</text>
+<g><animateTransform attributeName="transform" type="rotate" dur="6s" begin="0.00s" repeatCount="indefinite" keyTimes="0;0.03;0.06;0.09;0.12;0.15;1" values="0 109.71428571428572 92.0;-2.5 109.71428571428572 92.0;2.5 109.71428571428572 92.0;-2.5 109.71428571428572 92.0;2.5 109.71428571428572 92.0;0 109.71428571428572 92.0;0 109.71428571428572 92.0"/>
+  <rect x="71.71428571428572" y="54" width="76" height="76" rx="18" fill="url(#a0)"/>
+  <rect x="71.71428571428572" y="54" width="76" height="38.0" rx="18" fill="url(#gloss)"/>
+  <path d="M89.71428571428572 78.0h40a6 6 0 0 1 6 6v20a6 6 0 0 1-6 6h-22l-10 9v-9h-8a6 6 0 0 1-6-6v-20a6 6 0 0 1 6-6z" fill="#fff"/><rect x="103.71428571428572" y="88.0" width="12" height="10" rx="2" fill="#2563eb"/><path d="M106.21428571428572 88.0v-3a3.5 3.5 0 0 1 7 0v3" fill="none" stroke="#2563eb" stroke-width="2"/>
+</g>
+<text x="109.71428571428572" y="156" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#fff">Super App</text>
+<text x="109.71428571428572" y="174" text-anchor="middle" class="sans" font-size="11.5" fill="#fff" fill-opacity="0.6">Iraq · E2EE chat</text>
+<g><animateTransform attributeName="transform" type="rotate" dur="6s" begin="0.12s" repeatCount="indefinite" keyTimes="0;0.03;0.06;0.09;0.12;0.15;1" values="0 233.14285714285717 92.0;-2.5 233.14285714285717 92.0;2.5 233.14285714285717 92.0;-2.5 233.14285714285717 92.0;2.5 233.14285714285717 92.0;0 233.14285714285717 92.0;0 233.14285714285717 92.0"/>
+  <rect x="195.14285714285717" y="54" width="76" height="76" rx="18" fill="url(#a1)"/>
+  <rect x="195.14285714285717" y="54" width="76" height="38.0" rx="18" fill="url(#gloss)"/>
+  <text x="233.14285714285717" y="102.8" text-anchor="middle" class="sans" font-size="30" font-weight="800" fill="#fff">A</text><circle cx="267.14285714285717" cy="58" r="13" fill="#ff3b30" stroke="#120f26" stroke-width="2.5"/><text x="267.14285714285717" y="62.5" text-anchor="middle" class="sans" font-size="12.5" font-weight="700" fill="#fff">24</text>
+</g>
+<text x="233.14285714285717" y="156" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#fff">Aseel</text>
+<text x="233.14285714285717" y="174" text-anchor="middle" class="sans" font-size="11.5" fill="#fff" fill-opacity="0.6">4.6★ · 7.4K ratings</text>
+<g><animateTransform attributeName="transform" type="rotate" dur="6s" begin="0.24s" repeatCount="indefinite" keyTimes="0;0.03;0.06;0.09;0.12;0.15;1" values="0 356.57142857142856 92.0;-2.5 356.57142857142856 92.0;2.5 356.57142857142856 92.0;-2.5 356.57142857142856 92.0;2.5 356.57142857142856 92.0;0 356.57142857142856 92.0;0 356.57142857142856 92.0"/>
+  <rect x="318.57142857142856" y="54" width="76" height="76" rx="18" fill="url(#a2)"/>
+  <rect x="318.57142857142856" y="54" width="76" height="38.0" rx="18" fill="url(#gloss)"/>
+  <text x="356.57142857142856" y="102.8" text-anchor="middle" class="sans" font-size="30" font-weight="800" fill="#fff">T</text>
+</g>
+<text x="356.57142857142856" y="156" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#fff">Tameer Business</text>
+<text x="356.57142857142856" y="174" text-anchor="middle" class="sans" font-size="11.5" fill="#fff" fill-opacity="0.6">Nafath · Mada</text>
+<g><animateTransform attributeName="transform" type="rotate" dur="6s" begin="0.36s" repeatCount="indefinite" keyTimes="0;0.03;0.06;0.09;0.12;0.15;1" values="0 480.0 92.0;-2.5 480.0 92.0;2.5 480.0 92.0;-2.5 480.0 92.0;2.5 480.0 92.0;0 480.0 92.0;0 480.0 92.0"/>
+  <rect x="442.0" y="54" width="76" height="76" rx="18" fill="url(#a3)"/>
+  <rect x="442.0" y="54" width="76" height="38.0" rx="18" fill="url(#gloss)"/>
+  <text x="480.0" y="99.56" text-anchor="middle" class="sans" font-size="21" font-weight="800" fill="#fff">S&amp;R</text>
+</g>
+<text x="480.0" y="156" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#fff">Sahn &amp; Rageef</text>
+<text x="480.0" y="174" text-anchor="middle" class="sans" font-size="11.5" fill="#fff" fill-opacity="0.6">SwiftUI rewrite</text>
+<g><animateTransform attributeName="transform" type="rotate" dur="6s" begin="0.48s" repeatCount="indefinite" keyTimes="0;0.03;0.06;0.09;0.12;0.15;1" values="0 603.4285714285714 92.0;-2.5 603.4285714285714 92.0;2.5 603.4285714285714 92.0;-2.5 603.4285714285714 92.0;2.5 603.4285714285714 92.0;0 603.4285714285714 92.0;0 603.4285714285714 92.0"/>
+  <rect x="565.4285714285714" y="54" width="76" height="76" rx="18" fill="url(#a4)"/>
+  <rect x="565.4285714285714" y="54" width="76" height="38.0" rx="18" fill="url(#gloss)"/>
+  <text x="603.4285714285714" y="102.8" text-anchor="middle" class="sans" font-size="30" font-weight="800" fill="#fff">IS</text>
+</g>
+<text x="603.4285714285714" y="156" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#fff">Istend</text>
+<text x="603.4285714285714" y="174" text-anchor="middle" class="sans" font-size="11.5" fill="#fff" fill-opacity="0.6">4.6★ · KSA</text>
+<g><animateTransform attributeName="transform" type="rotate" dur="6s" begin="0.60s" repeatCount="indefinite" keyTimes="0;0.03;0.06;0.09;0.12;0.15;1" values="0 726.8571428571429 92.0;-2.5 726.8571428571429 92.0;2.5 726.8571428571429 92.0;-2.5 726.8571428571429 92.0;2.5 726.8571428571429 92.0;0 726.8571428571429 92.0;0 726.8571428571429 92.0"/>
+  <rect x="688.8571428571429" y="54" width="76" height="76" rx="18" fill="url(#a5)"/>
+  <rect x="688.8571428571429" y="54" width="76" height="38.0" rx="18" fill="url(#gloss)"/>
+  <text x="726.8571428571429" y="102.8" text-anchor="middle" class="sans" font-size="30" font-weight="800" fill="#fff">FK</text>
+</g>
+<text x="726.8571428571429" y="156" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#fff">Flex Kitchen</text>
+<text x="726.8571428571429" y="174" text-anchor="middle" class="sans" font-size="11.5" fill="#fff" fill-opacity="0.6">Nutrition plans</text>
+<g><animateTransform attributeName="transform" type="rotate" dur="6s" begin="0.72s" repeatCount="indefinite" keyTimes="0;0.03;0.06;0.09;0.12;0.15;1" values="0 850.2857142857142 92.0;-2.5 850.2857142857142 92.0;2.5 850.2857142857142 92.0;-2.5 850.2857142857142 92.0;2.5 850.2857142857142 92.0;0 850.2857142857142 92.0;0 850.2857142857142 92.0"/>
+  <rect x="812.2857142857142" y="54" width="76" height="76" rx="18" fill="url(#a6)"/>
+  <rect x="812.2857142857142" y="54" width="76" height="38.0" rx="18" fill="url(#gloss)"/>
+  <text x="850.2857142857142" y="102.8" text-anchor="middle" class="sans" font-size="30" font-weight="800" fill="#fff">H+</text>
+</g>
+<text x="850.2857142857142" y="156" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#fff">Healthy &amp; More</text>
+<text x="850.2857142857142" y="174" text-anchor="middle" class="sans" font-size="11.5" fill="#fff" fill-opacity="0.6">Nutrition plans</text>
+<rect x="48" y="216" width="864" height="56" rx="20" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-opacity="0.1"/>
+<text x="192.0" y="250" text-anchor="middle" class="sans" font-size="15" fill="#fff" fill-opacity="0.75"><tspan font-size="20" font-weight="800" fill="#fff" fill-opacity="1">24</tspan>  Aseel releases since 2024</text>
+<text x="480.0" y="250" text-anchor="middle" class="sans" font-size="15" fill="#fff" fill-opacity="0.75"><tspan font-size="20" font-weight="800" fill="#fff" fill-opacity="1">4.6★</tspan>  from 7.4K App Store ratings</text>
+<text x="768.0" y="250" text-anchor="middle" class="sans" font-size="15" fill="#fff" fill-opacity="0.75"><tspan font-size="20" font-weight="800" fill="#fff" fill-opacity="1">3</tspan>  markets: KSA · Iraq · Egypt</text>
+</svg>
